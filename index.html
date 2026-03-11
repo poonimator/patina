@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beautiful Traces — Patina</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+  :root{--bg:#fff;--fg:#000;--muted:#777;--accent:#3a3a3a;--border:#d4d4d4}
+  @media(prefers-color-scheme:dark){:root{--bg:#0a0a0a;--fg:#e0e0e0;--muted:#888;--accent:#bbb;--border:#262626}}
+  *{margin:0;padding:0;box-sizing:border-box}html{color-scheme:light dark}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased}
+  .page{max-width:600px;margin:0 auto;padding:80px 32px 100px}
+  .label{font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+  .sep{height:1px;background:var(--border);margin:48px 0}
+  .h1{font-family:'Instrument Serif',serif;font-size:clamp(32px,5.5vw,52px);font-weight:400;font-style:italic;line-height:1.15;letter-spacing:-0.02em;margin-bottom:20px}
+  .h2{font-family:'Instrument Serif',serif;font-size:clamp(24px,3.5vw,32px);font-weight:400;letter-spacing:-0.01em;margin-bottom:14px}
+  .h2 i{font-style:italic}
+  .p{font-size:13.5px;font-weight:300;line-height:1.8;color:var(--accent);max-width:500px}
+  .p em{font-style:italic;color:var(--fg)}.p+.p{margin-top:14px}
+
+  /* ── Bullets ── */
+  .bullets{margin-top:20px}
+  .bullet{display:grid;grid-template-columns:24px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--border)}
+  .bullet:last-child{border-bottom:1px solid var(--border)}
+  .bullet-dot{font-family:'Instrument Serif',serif;font-size:13px;font-style:italic;color:var(--muted);padding-top:1px}
+  .bullet-text{font-size:13px;font-weight:300;line-height:1.7;color:var(--accent)}
+  .bullet-text em{font-style:italic;color:var(--fg)}
+
+  .inv-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;margin-top:24px}
+  .inv-col{padding-top:16px;border-top:1px solid var(--border)}
+  .inv-col-name{font-family:'Instrument Serif',serif;font-size:16px;margin-bottom:10px}
+  .inv-col-name i{font-style:italic}
+  .inv-col-text{font-size:12px;font-weight:300;line-height:1.75;color:var(--accent)}
+  .inv-col-text em{font-style:italic;color:var(--fg)}
+  .lenses{display:flex;gap:6px;flex-wrap:nowrap}
+  .lens{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:400;letter-spacing:0.04em;text-transform:uppercase;padding:9px 18px;border:1px solid var(--border);border-radius:100px;color:var(--muted);background:transparent;cursor:pointer;transition:all 0.3s ease;white-space:nowrap}
+  .lens:hover{color:var(--fg);border-color:var(--accent)}
+  .lens.active{color:var(--fg);background:var(--border);border-color:var(--border)}
+  .lens-desc{margin-top:20px;font-size:13.5px;font-weight:300;line-height:1.75;color:var(--accent);max-width:480px;transition:opacity 0.3s ease,transform 0.3s ease}
+  .lens-desc.fading{opacity:0;transform:translateY(4px)}
+  .press{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .press span{font-size:11px;font-weight:400;letter-spacing:0.04em;padding:6px 14px;border:1px solid var(--border);border-radius:100px;color:var(--muted)}
+  .close{font-family:'Instrument Serif',serif;font-size:clamp(28px,4.5vw,42px);font-weight:400;font-style:italic}
+  .foot{margin-top:48px;padding-top:16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted)}
+  @media(max-width:600px){.page{padding:48px 20px 72px}.inv-grid{grid-template-columns:1fr;gap:20px}.lenses{flex-wrap:wrap}.lens{font-size:9px;padding:7px 10px;letter-spacing:0.02em}}
+  @keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  .s1{animation:up .4s ease both}.s2{animation:up .4s .05s ease both}.s3{animation:up .4s .1s ease both}.s4{animation:up .4s .15s ease both}.s5{animation:up .4s .2s ease both}.s6{animation:up .4s .25s ease both}.s7{animation:up .4s .3s ease both}
+</style>
+</head>
+<body>
+<main class="page">
+
+  <!-- 1. THE INVITE -->
+  <section class="s1">
+    <p class="label">c/o Patina</p>
+    <h1 class="h1">&ldquo;Beautiful Traces&rdquo;</h1>
+    <p class="p">An invitation into transformative luxury. Every property. Every stay. Every guest.</p>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- 2. THE OPPORTUNITY -->
+  <section class="s2">
+    <p class="label">The Opportunity</p>
+    <h2 class="h2">Luxury tomorrow won&rsquo;t look <i>like luxury today.</i></h2>
+
+    <div class="bullets">
+      <div class="bullet"><span class="bullet-dot">I</span><p class="bullet-text">Art fairs are outpacing fashion weeks. Ceramic studios have waitlists. The fastest-growing luxury segment isn&rsquo;t goods &mdash; it&rsquo;s <em>making.</em></p></div>
+      <div class="bullet"><span class="bullet-dot">II</span><p class="bullet-text">The next luxury guest doesn&rsquo;t collect logos. They collect <em>evidence of a life lived with their hands.</em></p></div>
+      <div class="bullet"><span class="bullet-dot">III</span><p class="bullet-text">Patina is already built for this guest &mdash; Turrell, Arsham, OJAS, STPI, Whitmore. A roster that belongs in a biennial. A philosophy called <em>&ldquo;Perpetuality.&rdquo;</em></p></div>
+      <div class="bullet"><span class="bullet-dot">IV</span><p class="bullet-text">What&rsquo;s missing is the frame &mdash; one idea that connects art, wellness, making, and community into a <em>category position</em> no competitor can follow.</p></div>
+    </div>
+
+    <p class="p" style="margin-top:24px">Beautiful Traces is that frame.</p>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- 3. THE INVITE — MESSAGE / OBJECT / SYMBOL -->
+  <section class="s3">
+    <p class="label">The Invite</p>
+    <h2 class="h2">It starts before <i>you arrive.</i></h2>
+    <p class="p">The invitation doesn&rsquo;t describe transformative luxury. It <em>performs</em> it.</p>
+
+    <div class="inv-grid">
+      <div class="inv-col">
+        <h3 class="inv-col-name">The <i>Message</i></h3>
+        <p class="inv-col-text">Seven words. <em>You are invited to leave a trace.</em> Not &ldquo;book your stay.&rdquo; Not &ldquo;discover luxury.&rdquo; A letter from someone who found something and needs you to see it.</p>
+      </div>
+      <div class="inv-col">
+        <h3 class="inv-col-name">The <i>Object</i></h3>
+        <p class="inv-col-text">A thin brass card. Your name laser-etched. Raw, uncoated. The moment you touch it, your fingerprints begin the oxidation. By the time you arrive, the invite has already started to <em>patina.</em></p>
+      </div>
+      <div class="inv-col">
+        <h3 class="inv-col-name">The <i>Symbol</i></h3>
+        <p class="inv-col-text">The threshold between guest and participant. Fari&rsquo;s edition is brass &mdash; ocean air accelerates the trace. Osaka&rsquo;s is copper, mirroring the castle roof. Each property, a different metal.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- 4. THE INVITE OPENS INTO -->
+  <section class="s4">
+    <p class="label">The Invite Opens Into</p>
+    <h2 class="h2">Five practices. <i>Every sense.</i></h2>
+    <p class="p" style="margin-bottom:20px">The brass card gets you in. What&rsquo;s inside is not a schedule &mdash; it&rsquo;s a <em>practice.</em> Five pillars across Fari and Osaka. Each one impossible to do alone.</p>
+    <div class="lenses" id="lensRow"></div>
+    <p class="lens-desc" id="lensDesc"></p>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- 5. THE ARTPIECE -->
+  <section class="s5">
+    <p class="label">The Artpiece</p>
+    <h2 class="h2">Every guest leaves with <i>an original.</i></h2>
+    <p class="p">Arsham drew erosions on the island. Turrell built a Skyspace. The Fari Art Atelier has always been about artists making work at Patina. Beautiful Traces extends that invitation to every guest.</p>
+    <p class="p">A guided making session. A small-scale artpiece in a material chosen for the edition &mdash; ceramic, brass, cast glass, coral composite. The material patinas. Over months, the object diverges from every other one made that week. Same origin, <em>different life.</em></p>
+    <p class="p">Not a souvenir. An <em>edition of one.</em></p>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- 6. THE AMBITION -->
+  <section class="s6">
+    <p class="label">The Ambition</p>
+    <h2 class="h2">The tribe is the content. <i>The object is the proof.</i></h2>
+    <p class="p">Beautiful Traces doesn&rsquo;t need a celebrity. The artpiece, the practices, and the community do the work. A brass disc that used to be bright and is now dark where someone held it will always be more interesting than a branded hoodie.</p>
+    <p class="p">One creative platform. Infinite editions. Every property shaped by the geology, the craft, and the culture of the place.</p>
+    <p class="label" style="margin-top:28px">Where the story lands</p>
+    <div class="press">
+      <span>Highsnobiety</span><span>Hypebeast</span><span>Outlander</span><span>SSENSE</span><span>Wallpaper*</span><span>Monocle</span><span>Cereal</span><span>Kinfolk</span><span>Nowness</span><span>Frieze</span><span>It&rsquo;s Nice That</span><span>T Magazine</span><span>Cabana</span>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- 7. CLOSE -->
+  <section class="s7">
+    <p class="close">Beautiful traces.</p>
+  </section>
+
+  <div class="foot"><span>Patina</span><span>2026</span></div>
+
+</main>
+
+<script>
+var pillars = [
+  { tab: 'Culinary', desc: 'Wagyumafia. Khyber. P72\u2019s 72 micro-seasons. Barin\u2019s teppanyaki. Chef-led dining where the ingredient is the teacher and the table is the classroom. Fari Marina Village as a communal table on closing night.' },
+  { tab: 'Creative', desc: 'Fari Art Atelier residencies. STPI print and paper workshops. Coral sculpture making. The guest as maker \u2014 hands in material, not behind a screen. Every edition leaves work on the island for the next cohort to find.' },
+  { tab: 'Body', desc: 'Breathwork with Avery Whitmore. Cryotherapy and infrared at Patina Osaka. Bamford\u2019s morning rituals at Fari. Wellness as attention, not indulgence. The body as the first instrument of transformation.' },
+  { tab: 'Sonic', desc: 'The Listening Room by OJAS \u2014 hand-built speakers, vinyl, deep listening. Morning Soundscapes in Osaka. FKJ under the Maldivian sky. Sound not as background but as practice. Analogue ritual in a digital world.' },
+  { tab: 'Nature', desc: 'Guided marine encounters. Coral restoration. Kisetsukan \u2014 Osaka\u2019s seasonal awareness framing every meal, every view, every transition. The environment isn\u2019t the backdrop. It\u2019s the programme.' },
+];
+var current = 0;
+var row = document.getElementById('lensRow');
+var desc = document.getElementById('lensDesc');
+pillars.forEach(function(l, i) {
+  var btn = document.createElement('button');
+  btn.className = 'lens' + (i === 0 ? ' active' : '');
+  btn.textContent = l.tab;
+  btn.onclick = function() { switchLens(i); };
+  row.appendChild(btn);
+});
+function switchLens(i) {
+  if (i === current) return;
+  current = i;
+  desc.classList.add('fading');
+  setTimeout(function() {
+    desc.textContent = pillars[i].desc;
+    desc.classList.remove('fading');
+  }, 250);
+  var btns = document.querySelectorAll('.lens');
+  btns.forEach(function(b, idx) { b.classList.toggle('active', idx === i); });
+}
+desc.textContent = pillars[0].desc;
+</script>
+</body>
+</html>
